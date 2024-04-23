@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public interface IHealth
 {
     float health { get; set; }
