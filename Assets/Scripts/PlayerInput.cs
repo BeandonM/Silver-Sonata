@@ -1,23 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour, IInput
 {
-    // Start is called before the first frame update
-    void Start()
+    public Vector2 getMove()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void grabInputs()
-    {
-        playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EntityData : IStats, IMoveable
+public class EntityData : IStats, IMoveStats
 {
     public float health { get; set; }
     public float maxHealth { get; set; }
@@ -12,6 +12,31 @@ public class EntityData : IStats, IMoveable
     public float wisMulti { get; set; }
 
     public float movespeed { get; set; }
+    public EntityData()
+    {
+        health = 100f;
+        maxHealth = 100f;
+        str = 1;
+        end = 1;
+        wis = 1;
+        strMulti = 1f;
+        endMulti = 1f;
+        wisMulti = 1f;
+        movespeed = 1f;
+    }
+    public EntityData(float health, float maxHealth, int str, int end, int wis, float strMulti, float endMulti, float wisMulti, float movespeed)
+    {
+        this.health = health;
+        this.maxHealth = maxHealth;
+        this.str = str;
+        this.end = end;
+        this.wis = wis;
+        this.strMulti = strMulti;
+        this.endMulti = endMulti;
+        this.wisMulti = wisMulti;
+        this.movespeed = movespeed;
+    }
+    
     public int getStr()
     {
         return str;
@@ -75,9 +100,5 @@ public class EntityData : IStats, IMoveable
     public void setMovespeed(float ms)
     {
         movespeed = ms;
-    }
-    public void move()
-    {
-
     }
 }
