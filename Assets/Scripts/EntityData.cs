@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EntityData : IStats
+public class EntityData : IStats, IMoveable
 {
     public float health { get; set; }
     public float maxHealth { get; set; }
@@ -11,6 +11,7 @@ public class EntityData : IStats
     public float endMulti { get; set; }
     public float wisMulti { get; set; }
 
+    public float movespeed { get; set; }
     public int getStr()
     {
         return str;
@@ -66,5 +67,17 @@ public class EntityData : IStats
     public void setHealth(float hp)
     {
         health = hp;
+    }
+    public float getMovespeed()
+    {
+        return movespeed;
+    }
+    public void setMovespeed(float ms)
+    {
+        movespeed = ms;
+    }
+    public void move()
+    {
+
     }
 }
